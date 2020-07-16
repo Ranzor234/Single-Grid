@@ -1,0 +1,136 @@
+/** @format */
+:root {
+	--Cyan: hsl(179, 62%, 43%);
+	--Bright-Yellow: hsl(71, 73%, 54%);
+	--Light-Gray: hsl(204, 43%, 93%);
+	--Grayish-Blue: hsl(218, 22%, 67%);
+	--Light-Cyan: hsl(179, 42%, 70%);
+}
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-family: "Karla", sans-serif;
+}
+
+body {
+	background-color: var(--Light-Gray);
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: auto 350px auto;
+	grid-template-rows: 40px 1fr 1fr 1fr 20px;
+	/* justify-items: center; */
+}
+
+.upper {
+	grid-column-start: 2;
+	grid-row-start: 2;
+	width: 350px;
+	height: 200px;
+	background-color: #ffffff;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.upper-items,
+.middle-items,
+.bottom-items {
+	margin-left: 20px;
+}
+.upper h1 {
+	padding-top: 20px;
+
+	color: var(--Cyan);
+}
+
+.upper h4 {
+	margin-top: 20px;
+	color: var(--Bright-Yellow);
+}
+
+.upper p {
+	margin-top: 20px;
+	color: var(--Grayish-Blue);
+}
+
+.middle {
+	grid-column-start: 2;
+	grid-row-start: 3;
+	width: 350px;
+	height: 200px;
+	background-color: var(--Cyan);
+}
+
+.middle h1 {
+	padding-top: 20px;
+	color: #ffffff;
+	font-weight: 700;
+}
+
+.middle p {
+	margin-top: 10px;
+	color: var(--Light-Gray);
+}
+
+.middle p span {
+	font-size: 2em;
+	color: #ffffff;
+}
+
+.middle button {
+	cursor: pointer;
+	margin-top: 15px;
+	outline: unset;
+	border: none;
+	width: 300px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: var(--Bright-Yellow);
+	color: #ffffff;
+	box-shadow: 4px 3px 15px #888888;
+	transition: 0.4s;
+}
+
+.middle button:hover {
+	background-color: #ffffff;
+	color: var(--Bright-Yellow);
+}
+.bottom {
+	grid-column-start: 2;
+	grid-row-start: 4;
+	width: 350px;
+	height: 200px;
+	background-color: var(--Light-Cyan);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.bottom h1 {
+	padding-top: 20px;
+	color: #ffffff;
+}
+.reasons {
+	margin-top: 10px;
+}
+
+.reasons p {
+	color: var(--Light-Gray);
+}
+
+@media (min-width: 825px) {
+	.upper {
+		width: 700px;
+	}
+
+	.middle {
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 0;
+	}
+	.bottom {
+		border-bottom-left-radius: 0;
+		grid-column-start: 3;
+		grid-row-start: 3;
+	}
+}
