@@ -1,0 +1,128 @@
+$Cyan: hsl(179, 62%, 43%);
+$Bright-Yellow: hsl(71, 73%, 54%);
+$Light-Gray: hsl(204, 43%, 93%);
+$Grayish-Blue: hsl(218, 22%, 67%);
+$Light-Cyan: hsl(179, 42%, 70%);
+
+$break-large: "only screen and (min-width : 768px)";
+
+@mixin grid-items(
+  $gridColumnStart,
+  $gridRowStart,
+  $width,
+  $height,
+  $background
+) {
+  grid-column-start: $gridColumnStart;
+  grid-row-start: $gridRowStart;
+  width: $width;
+  height: $height;
+  background-color: $background;
+}
+
+* {
+  padding: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+}
+
+body {
+  background-color: $Light-Gray;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 350px auto;
+  grid-template-rows: 40px 1fr 1fr 1fr 20px;
+}
+
+.upper-items,
+.middle-items,
+.bottom-items {
+  margin-left: 20px;
+}
+.upper {
+  @include grid-items(2, 2, 350px, 200px, #ffffff);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  h1 {
+    padding-top: 20px;
+    color: $Cyan;
+  }
+  h4 {
+    margin-top: 20px;
+    color: $Bright-Yellow;
+  }
+  p {
+    margin-top: 20px;
+    color: $Grayish-Blue;
+  }
+}
+
+.middle {
+  @include grid-items(2, 3, 350px, 200px, $Cyan);
+  h1 {
+    padding-top: 20px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  p {
+    margin-top: 10px;
+    color: $Light-Gray;
+    span {
+      font-size: 2em;
+      color: #ffffff;
+    }
+  }
+  button {
+    cursor: pointer;
+    margin-top: 15px;
+    outline: unset;
+    border: none;
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: $Bright-Yellow;
+    color: #ffffff;
+    box-shadow: 4px 3px 15px #888888;
+    transition: 0.4s;
+    &:hover {
+      background-color: #ffffff;
+      color: $Bright-Yellow;
+    }
+  }
+}
+
+.bottom {
+  @include grid-items(2, 4, 350px, 200px, $Light-Cyan);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  h1 {
+    padding-top: 20px;
+    color: #ffffff;
+  }
+}
+
+.reasons {
+  margin-top: 10px;
+  p {
+    color: $Light-Gray;
+  }
+}
+
+@media #{$break-large} {
+  .upper {
+    width: 700px;
+  }
+
+  .middle {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 0;
+  }
+  .bottom {
+    border-bottom-left-radius: 0;
+    grid-column-start: 3;
+    grid-row-start: 3;
+  }
+}
